@@ -7,6 +7,8 @@ const {shuffleArray} = require('./utils')
 app.use(express.json())
 app.use(cors)
 
+app.use(express.static('public'))
+
 app.get('/api/robots', (req, res) => {
     try {
         res.status(200).send(botsArr)

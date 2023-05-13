@@ -1,4 +1,10 @@
 const express = require("express");
+//const axios = require('axios');
+const app = express();
+
+app.use(express.json());
+app.listen(5500, () => console.log('Server Running'));
+
 const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
 
@@ -6,10 +12,8 @@ const playerRecord = {
   wins: 0,
   losses: 0,
 };
-const app = express();
 
-app.use(express.json());
-app.listen(4040, () => console.log('Server Running'))
+
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>
@@ -87,6 +91,6 @@ app.get("/api/player", (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log(`Listening on 8000`);
-});
+// app.listen(8000, () => {
+//   console.log(`Listening on 8000`);
+// });

@@ -1,8 +1,9 @@
 const express = require("express");
-//const axios = require('axios');
+const cors = require('cors')
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.listen(5500, () => console.log('Server Running'));
 
 const bots = require("./src/botsData");
@@ -12,7 +13,6 @@ const playerRecord = {
   wins: 0,
   losses: 0,
 };
-
 
 
 // Add up the total health of all the robots

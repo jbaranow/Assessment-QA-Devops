@@ -1,22 +1,16 @@
 const express = require("express");
 const cors = require('cors')
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static(`public`))
-
-//app.listen(5500, () => console.log('Server Running'));
-
 const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
-//const botsData = require("./src/botsData");
 
 const playerRecord = {
   wins: 0,
   losses: 0,
 };
+const app = express();
 
+app.use(cors());
+app.use(express.json());
 
 
 // Add up the total health of all the robots
@@ -95,6 +89,6 @@ app.get("/api/player", (req, res) => {
   }
 });
 
-app.listen(5500, () => {
-  console.log(`Listening on 5500`);
+app.listen(8000, () => {
+  console.log(`Listening on 8000`);
 });

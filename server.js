@@ -12,6 +12,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '876d893ce5854a50954af0dab8b84d45',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+rollbar.log('Hello World!')
+
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>

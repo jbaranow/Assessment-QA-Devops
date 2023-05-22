@@ -12,6 +12,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(`${__dirname}/public`))
+
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
   accessToken: '876d893ce5854a50954af0dab8b84d45',
